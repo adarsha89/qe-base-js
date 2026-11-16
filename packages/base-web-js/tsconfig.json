@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": ["src/**/*.ts", "src/shared-browser/browser-server.mjs"],
+  "exclude": ["node_modules", "dist", "src/__tests__/**"],
+  "references": [{ "path": "../base-js" }]
+}

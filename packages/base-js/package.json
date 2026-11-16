@@ -1,0 +1,26 @@
+{
+  "name": "@qe/base-js",
+  "version": "0.1.2",
+  "description": "QE base framework core: URL joining, typed env config, logging, and the mutation-testing switch shared by every other @qe/base-*-js package.",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "test": "playwright test",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "17.4.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "typescript": "6.0.3"
+  }
+}

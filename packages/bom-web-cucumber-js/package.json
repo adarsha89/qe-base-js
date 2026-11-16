@@ -1,0 +1,6 @@
+{
+  "name": "@qe/bom-web-cucumber-js",
+  "version": "0.1.2",
+  "description": "QE BOM (Bill of Materials) for the web-BDD-testing slice: dependency-version pinning only, no source code.",
+  "license": "UNLICENSED"
+}

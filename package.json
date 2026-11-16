@@ -1,0 +1,31 @@
+{
+  "name": "qe-base-js",
+  "private": true,
+  "version": "0.1.2",
+  "description": "Central TypeScript QE automation framework: BOM + base package pairs consumed by other QE repos.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "pnpm -r exec tsc --noEmit",
+    "bom:check": "node .ci/enforce-bom-rules.mjs"
+  },
+  "devDependencies": {
+    "@playwright/cli": "^0.1.24",
+    "@playwright/mcp": "^0.0.85",
+    "@types/node": "^26.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@typescript-eslint/parser": "^8.67.0",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-playwright": "^2.11.0",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.3"
+  }
+}

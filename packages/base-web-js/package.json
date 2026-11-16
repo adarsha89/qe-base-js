@@ -1,0 +1,29 @@
+{
+  "name": "@qe/base-web-js",
+  "version": "0.1.2",
+  "description": "QE base framework for web/E2E testing: BasePage, the shared-browser execution model (one detached browser per engine per run, shared by every worker), race-free network interception, and the UI mutation-testing primitive.",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "test": "playwright test",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qe/base-js": "workspace:*",
+    "@faker-js/faker": "10.5.0",
+    "@playwright/test": "1.62.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/cli": "0.1.24",
+    "@playwright/mcp": "0.0.85",
+    "@types/node": "26.2.0",
+    "typescript": "6.0.3"
+  }
+}

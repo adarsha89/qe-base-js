@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Playwright (unanchored: every package has its own)
+test-results/
+playwright-report/
+playwright/.cache/
+blob-report/
+reports/
+allure-results/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Sonar
+.scannerwork/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Coverage
+coverage/
+.stryker-tmp/
+reports/mutation/
+
+# Local working documents (requirements/plans/reviews/etc. — see
+# .ai/skills/_shared/framework-guidelines.md §7). Durable lessons belong in
+# .ai/context/framework-learnings.md instead, which IS tracked.
+/docs
+
+# Claude Code local-only scaffolding: .claude/skills and .claude/agents are symlinks to .ai/,
+# and settings.local.json is a per-developer override. .ai/ itself and CLAUDE.md/AGENTS.md are
+# NOT gitignored in this repo — unlike a leaf test-automation repo, this is the shared central
+# framework and its governance docs must be tracked for every contributor and tool.
+# .claude/skills
+# .claude/agents
+# .claude/settings.local.json

@@ -1,0 +1,6 @@
+{
+  "name": "@qe/bom-js",
+  "version": "0.1.2",
+  "description": "QE BOM (Bill of Materials) for the core slice: dependency-version pinning only, no source code.",
+  "license": "UNLICENSED"
+}

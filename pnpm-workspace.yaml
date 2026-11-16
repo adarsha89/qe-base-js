@@ -1,0 +1,16 @@
+packages:
+  - 'packages/bom-js'
+  - 'packages/base-js'
+  - 'packages/bom-api-js'
+  - 'packages/base-api-js'
+  - 'packages/bom-web-js'
+  - 'packages/base-web-js'
+  - 'packages/bom-web-cucumber-js'
+  - 'packages/base-web-cucumber-js'
+
+# Security override, not BOM governance: minimatch is a transitive dev dependency of the
+# eslint/typescript-eslint toolchain (not listed in any qe.bom.json managed map), vulnerable
+# at <11.0.1 (GHSA-g3hv-75wg-m249, moderate). Force every transitive resolution to a patched
+# version until the toolchain itself picks one up natively.
+overrides:
+  minimatch@>=7.0.0 <11.0.1: '>=11.0.1'

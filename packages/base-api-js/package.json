@@ -1,0 +1,26 @@
+{
+  "name": "@qe/base-api-js",
+  "version": "0.1.2",
+  "description": "QE base framework for API testing: a typed base HTTP client, request-building helpers, and response-assertion helpers, built on Playwright's APIRequestContext.",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "test": "playwright test",
+    "lint": "eslint src",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qe/base-js": "workspace:*",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "typescript": "6.0.3"
+  }
+}

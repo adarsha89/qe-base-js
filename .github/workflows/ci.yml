@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Format check
+        run: pnpm run format:check
+
+      # Enforcement before the build/test gates: a BOM drift should fail fast,
+      # before spending time compiling/running self-tests against it.
+      - name: BOM enforcement
+        run: pnpm run bom:check
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Install Playwright browsers
+        run: pnpm --filter @qe/base-web-js exec playwright install --with-deps chromium
+
+      - name: Self-tests (chromium only — see .ai/context/self-test-verification-workflow.md)
+        run: |
+          pnpm --filter @qe/base-js test
+          pnpm --filter @qe/base-api-js test
+          pnpm --filter @qe/base-web-js test -- --project=chromium

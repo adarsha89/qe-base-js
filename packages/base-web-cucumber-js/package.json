@@ -1,0 +1,25 @@
+{
+  "name": "@qe/base-web-cucumber-js",
+  "version": "0.1.2",
+  "description": "QE base framework for web BDD testing (placeholder — see README.md). Depends only on @qe/base-js, not on @qe/base-web-js, mirroring qe-base-web-cucumber-java's independence from qe-base-web-java.",
+  "license": "UNLICENSED",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@qe/base-js": "workspace:*"
+  },
+  "devDependencies": {
+    "@playwright/cli": "0.1.24",
+    "@playwright/mcp": "0.0.85",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.2.0",
+    "typescript": "6.0.3"
+  }
+}
